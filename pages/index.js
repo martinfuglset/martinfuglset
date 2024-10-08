@@ -13,7 +13,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-5 text-lg text-gray-600">
-          <span className="text-gray-400">Gott würfelt nicht –</span> Analytical mind crafting innovative solutions by rigorous design principles.
+          <span className="text-gray-400">Gott würfelt nicht –</span> Analytical mind and systematic thinker, crafting innovative solutions by rigorous design principles.
         </p>
 
         <div className="flex mt-8 space-x-6">
