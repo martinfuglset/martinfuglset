@@ -25,7 +25,7 @@ export default function Home() {
             GitHub &rarr;
           </a>
           <a
-            href="https://linkedin.com/martinfuglset"
+            href="https://www.linkedin.com/in/martinfuglset/"
             className="px-6 py-3 text-base font-medium border border-black hover:bg-black hover:text-white transition duration-200"
             aria-label="Visit my LinkedIn"
           >
