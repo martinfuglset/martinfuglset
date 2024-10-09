@@ -1,4 +1,3 @@
-// components/Layout.js
 import Link from 'next/link';
 import Head from 'next/head';
 
@@ -9,20 +8,20 @@ export default function Layout({ children }) {
         <title>Martin Fuglset</title>
       </Head>
 
-      {/* Header */}
-      <header className="p-8 bg-white dark:bg-black border-b border-gray-300 dark:border-gray-700 transition-colors duration-500">
+      {/* Header with Navigation merged */}
+      <header className="p-4 md:p-8 bg-white dark:bg-black border-b border-gray-300 dark:border-gray-700 transition-colors duration-500">
         <div className="text-lg text-gray-800 dark:text-gray-300 mb-4">
           <h1 className="text-2xl font-bold transition ease-in-out duration-200 hover:translate-x-2 hover:text-black dark:hover:text-white">
             <Link href="/">Martin Fuglset</Link>
           </h1>
-          <p className="mt-2 text-gray-500 dark:text-gray-400">
+          <p className="mt-2 text-sm md:text-base text-gray-500 dark:text-gray-400 leading-normal">
             Gott würfelt nicht – Analytical mind and systematic thinker, crafting innovative solutions by rigorous design principles.
           </p>
         </div>
 
         {/* Navigation */}
-        <nav className="mt-6">
-          <ul className="space-x-6 flex flex-col md:flex-row">
+        <nav className="mt-4 md:mt-6">
+          <ul className="space-y-2 md:space-y-0 md:space-x-6 flex flex-col md:flex-row">
             {[
               { label: 'Curriculum Vitae', href: '/cv' },
               { label: 'Design Principles', href: '/design-principles' }
@@ -30,7 +29,7 @@ export default function Layout({ children }) {
               <li key={idx}>
                 <Link
                   href={section.href}
-                  className="relative text-lg text-gray-800 dark:text-gray-300 transition ease-in-out duration-200 hover:translate-x-2 hover:text-black dark:hover:text-white transform"
+                  className="block text-lg text-gray-800 dark:text-gray-300 transition ease-in-out duration-200 hover:translate-x-2 hover:text-black dark:hover:text-white"
                 >
                   {section.label}
                 </Link>
@@ -41,12 +40,12 @@ export default function Layout({ children }) {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 p-8 bg-white dark:bg-black text-black dark:text-white transition-colors duration-500">
+      <main className="flex-1 p-4 md:p-8 bg-white dark:bg-black text-black dark:text-white transition-colors duration-500">
         {children}
       </main>
 
       {/* Footer */}
-      <footer className="p-8 bg-white dark:bg-black border-t border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 transition-colors duration-500">
+      <footer className="p-4 md:p-8 bg-white dark:bg-black border-t border-gray-300 dark:border-gray-700 text-gray-500 dark:text-gray-400 transition-colors duration-500">
         <div className="flex flex-col space-y-2">
           {[
             { href: 'https://github.com/martinfuglset', label: 'GitHub →', aria: 'Visit my GitHub' },
