@@ -10,7 +10,7 @@ export default function Layout({ children }) {
       </Head>
 
       {/* Left Side Panel (contains header, navigation, and footer) */}
-      <div className="flex flex-col w-1/4 min-h-screen bg-white border-r p-10">
+      <div className="flex flex-col w-1/4 min-h-screen bg-white border-r p-10 fixed top-0 left-0">
         {/* Header */}
         <header className="mb-8">
           <h1 className="text-lg text-black">
@@ -25,12 +25,13 @@ export default function Layout({ children }) {
         <nav className="mb-auto">
           <ul className="space-y-4">
             {[
+              { label: 'Curriculum Vitae', href: '/cv' },
               { label: 'Design Principles', href: '/design-principles' }
             ].map((section, idx) => (
               <li key={idx}>
                 <Link
                   href={section.href}
-                  className="relative text-lg text-gray-700 transition ease-in-out duration-200 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:bg-black before:scale-x-0 before:origin-left before:transition-transform before:duration-200 hover:before:scale-x-100 hover:text-black"
+                  className="relative block text-lg text-gray-700 transition ease-in-out duration-200 hover:translate-x-2 hover:text-black transform"
                 >
                   {section.label}
                 </Link>
@@ -40,7 +41,7 @@ export default function Layout({ children }) {
         </nav>
 
         {/* Footer */}
-        <footer className="mt-8">
+        <footer className="mt-8 text-lg">
           <div className="flex flex-col space-y-2">
             {[
               { href: 'https://github.com/martinfuglset', label: 'GitHub →', aria: 'Visit my GitHub' },
@@ -50,19 +51,23 @@ export default function Layout({ children }) {
               <a
                 key={idx}
                 href={link.href}
-                className="relative transition ease-in-out duration-200 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:bg-black before:scale-x-0 before:origin-left before:transition-transform before:duration-200 hover:before:scale-x-100"
+                className="group relative inline-flex items-center transition ease-in-out duration-200"
                 aria-label={link.aria}
               >
-                {link.label}
+                <span>{link.label.split('→')[0]}</span> {/* Text before the arrow */}
+                <span className="ml-1 transition-transform ease-in-out duration-200 group-hover:-rotate-45">→</span> {/* Arrow */}
               </a>
             ))}
           </div>
-          <p className="mt-4 text-gray-500">&copy; {new Date().getFullYear()} Martin Fuglset. All rights reserved.</p>
+          <div className="mt-4 text-gray-500">
+            <p>&copy; {new Date().getFullYear()} Martin Fuglset</p>
+            <p>All rights reserved</p>
+          </div>
         </footer>
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-8 ml-[25%] overflow-y-auto">
         {children}
       </main>
     </div>
