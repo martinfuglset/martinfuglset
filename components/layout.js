@@ -60,8 +60,8 @@ export default function Layout({ children }) {
             ))}
           </div>
           <div className="mt-4 text-gray-500">
-            <p>&copy; {new Date().getFullYear()} Martin Fuglset</p>
-            <p>All rights reserved</p>
+            <p>&copy; {new Date().getFullYear()}, Martin Fuglset</p>
+            <p>All rights reserved.</p>
           </div>
         </footer>
       </div>
