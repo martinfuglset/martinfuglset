@@ -25,4 +25,29 @@ body {
 /* Ensure Tailwind dark mode matches the system */
 @tailwind utilities;
 
-/* Custom styles if necessary */
+/* Link hover animation for non-footer links */
+.movable-link {
+  @apply inline-block transition-all ease-in-out duration-300; /* Applies smooth transition for all properties */
+}
+
+.movable-link:hover {
+  @apply translate-x-1; /* Moves the link slightly to the right on hover */
+}
+
+/* Footer link styles (no movement) */
+.link-item {
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.link-item .arrow {
+  display: inline-block;
+  margin-left: 5px; /* Optional: Add some space between text and arrow */
+  transition: transform 0.3s ease;
+  transform-origin: center center; /* Ensures rotation happens in place */
+}
+
+.link-item:hover .arrow {
+  transform: rotate(-45deg);
+}
