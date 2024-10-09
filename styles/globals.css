@@ -1,38 +1,39 @@
+/* Tailwind base utilities */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* Custom variables for light and dark modes */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background-light: #ffffff;
+  --background-dark: #222222;
+  --foreground-light: #171717;
+  --foreground-dark: #ededed;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background-light: #222222; /* Dark mode background */
+    --foreground-light: #ededed; /* Dark mode text color */
   }
 }
 
-/* Font-face for Suisse Int'l */
-@font-face {
-  font-family: 'SuisseIntl';
-  src: url('/fonts/SuisseIntl-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* Global body styles */
+/* Apply the variables to the body */
 body {
-  color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background-light);
+  color: var(--foreground-light);
   font-family: 'SuisseIntl', sans-serif;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
-/* Custom Tailwind utility for text balancing */
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--background-dark);
+    color: var(--foreground-dark);
   }
 }
+
+/* Ensuring Tailwind's dark mode matches the system */
+@tailwind utilities;
+
+/* Custom styles if necessary */
