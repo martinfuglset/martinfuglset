@@ -1,5 +1,5 @@
 // pages/cv.js
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import ExpandableSection from '../components/ExpandableSection';
 import ExpandableBlock from '../components/ExpandableBlock';
 import { calculateDuration } from '../utils/calculateDuration';
