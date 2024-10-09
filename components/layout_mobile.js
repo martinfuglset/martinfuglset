@@ -9,7 +9,7 @@ export default function Layout({ children }) {
         <title>Martin Fuglset</title>
       </Head>
 
-      {/* Header with Navigation merged */}
+      {/* Header */}
       <header className="p-8 bg-white dark:bg-black border-b border-gray-300 dark:border-gray-700 transition-colors duration-500">
         <div className="text-lg text-gray-800 dark:text-gray-300 mb-4">
           <h1 className="text-2xl font-bold transition ease-in-out duration-200 hover:translate-x-2 hover:text-black dark:hover:text-white">
@@ -22,7 +22,7 @@ export default function Layout({ children }) {
 
         {/* Navigation */}
         <nav className="mt-6">
-          <ul className="space-x-6 flex">
+          <ul className="space-x-6 flex flex-col md:flex-row">
             {[
               { label: 'Curriculum Vitae', href: '/cv' },
               { label: 'Design Principles', href: '/design-principles' }
