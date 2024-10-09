@@ -3,7 +3,6 @@ import Layout from '../components/Layout';
 
 export default function Section1() {
   return (
-    <Layout>
       <section className="w-3/4 text-lg">
         <p className="mt-4">
         There’s a stubborn and widespread belief that design is nothing more than an artistic pursuit—a pleasant but impractical hobby, limited to painting, sculpture, and other forms of decoration. This is wrong. Design is far more than creating something beautiful for its own sake. At its core, design is about solving problems. The confusion arises because we often link design to appearances, but its real strength lies in its usefulness. Design is not just art; it’s the tool we use to build our world, solve practical problems, and create the technology that shapes our future.
@@ -32,6 +31,5 @@ Design isn’t just about solving problems—it’s also about making something 
 Good design speaks to us on a deeper level. It’s not just about function, but about making something that resonates with people. Beauty isn’t an afterthought; it’s what draws us in, making the experience of using something intuitive and enjoyable.
         </p>
       </section>
-    </Layout>
   );
 }

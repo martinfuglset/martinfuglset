@@ -3,19 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom variables for light and dark modes */
+/* Custom variables */
 :root {
   --background-light: #ffffff;
-  --background-dark: #222222;
   --foreground-light: #171717;
-  --foreground-dark: #ededed;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-light: #222222; /* Dark mode background */
-    --foreground-light: #ededed; /* Dark mode text color */
-  }
+.dark {
+  --background-light: #222222; /* Dark mode background */
+  --foreground-light: #ededed; /* Dark mode text color */
 }
 
 /* Apply the variables to the body */
@@ -26,14 +22,7 @@ body {
   transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: var(--background-dark);
-    color: var(--foreground-dark);
-  }
-}
-
-/* Ensuring Tailwind's dark mode matches the system */
+/* Ensure Tailwind dark mode matches the system */
 @tailwind utilities;
 
 /* Custom styles if necessary */

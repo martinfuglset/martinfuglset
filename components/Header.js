@@ -7,7 +7,7 @@ export default function Header() {
         <Link href="/">Martin Fuglset</Link>
       </h1>
       <p className="mt-5">
-        Gott würfelt nicht – Analytical mind and systematic thinker, crafting innovative solutions by rigorous design principles.
+        Analytical mind and systematic thinker, crafting innovative solutions by rigorous design principles.
       </p>
     </header>
   );

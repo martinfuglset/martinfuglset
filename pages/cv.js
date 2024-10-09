@@ -6,7 +6,6 @@ import { calculateDuration } from '../utils/calculateDuration';
 
 export default function Home() {
   return (
-    <Layout>
       <section className="w-3/4 mx-auto">
         {/* Experience Section */}
         <ExpandableSection title="Experience">
@@ -75,6 +74,5 @@ export default function Home() {
           />
         </ExpandableSection>
       </section>
-    </Layout>
   );
 }
