@@ -7,7 +7,7 @@ export default function Header() {
         <Link href="/">Martin Fuglset</Link>
       </h1>
       <p className="mt-5">
-        Analytical mind and systematic thinker, crafting innovative solutions by rigorous design principles.
+        Studying business and data science / computer science.
       </p>
     </header>
   );

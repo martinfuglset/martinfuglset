@@ -12,7 +12,7 @@ export default function Footer() {
           Email <span className="arrow">→</span>
         </a>
       </div>
-      <div className="mt-4 text-gray-500 dark:text-gray-400">
+      <div className="mt-4 text-gray-500 dark:text-gray-400 text-sm">
         <p>&copy; {new Date().getFullYear()}, Martin Fuglset</p>
         <p>All rights reserved.</p>
       </div>
