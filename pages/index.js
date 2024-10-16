@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 export default function Home() {
   const sections = [
     { label: 'CV', href: '/cv' },
-    { label: 'Projects', href: '/projects' }
+    { label: 'Projects', href: '/projects' },
+    { label: 'Academia', href: '/academia' }
   ];
 
   return (
