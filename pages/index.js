@@ -12,7 +12,7 @@ export default function Home() {
       <div className="flex flex-col items-center space-y-6">
         <text className="text-lg">
         <p className="text-gray-500">Currently studying business, data science, and computer science.</p>
-        <p className="text-gray-500">I have a decade of experience with over 15 digital products.</p>
+        <p className="text-gray-500">More than a decade of experience with building digital products.</p>
         </text>
       </div>
       
