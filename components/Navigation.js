@@ -2,7 +2,8 @@ import Link from 'next/link';
 
 export default function Navigation() {
   const sections = [
-    { label: 'CV', href: '/cv' }
+    { label: 'CV', href: '/cv' },
+    { label: 'Projects', href: '/projects' }
   ];
 
   return (

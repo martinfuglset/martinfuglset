@@ -11,7 +11,7 @@ export default function Layout({ children }) {
       </Head>
 
       {/* Left Side Panel - Sticky */}
-      <aside className="hidden md:flex flex-col md:w-1/4 bg-white dark:bg-black border-r border-gray-300 dark:border-gray-700 p-10 sticky top-0 h-screen">
+      <aside className="hidden md:flex flex-col w-full md:max-w-xs bg-white dark:bg-black border-r border-gray-300 dark:border-gray-700 p-10 sticky top-0 h-screen">
         <Header />
         <Navigation />
         <Footer className="mt-auto" /> {/* Footer pushed to the bottom */}
