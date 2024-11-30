@@ -9,12 +9,13 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col items-center text-center overflow-hidden space-y-12"> {/* Add spacing here */}
-      <div className="flex flex-col items-center justify-center space-y-6">
+    <div className="flex flex-col items-center text-center space-y-12 p-4 md:p-8">
+      {/* Cube and Intro Text */}
+      <div className="flex flex-col items-center justify-center space-y-6 w-full max-w-full">
         <Cube />
-        <div className="text-lg space-y-3"> {/* Add spacing for the paragraphs */}
+        <div className="text-lg space-y-3">
           <p className="text-gray-500">
-            Currently studying business and data science.
+            Currently studying business <br></br> and data science.
           </p>
           <p className="text-gray-500">
             More than a decade of experience building digital products.
@@ -23,8 +24,8 @@ export default function Home() {
       </div>
 
       {/* Navigation Section */}
-      <nav className="mb-8">
-        <ul className="flex space-x-4">
+      <nav>
+        <ul className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 w-full">
           {sections.map((section, idx) => (
             <li key={idx}>
               <Link href={section.href} legacyBehavior>
