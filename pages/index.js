@@ -14,10 +14,10 @@ export default function Home() {
         <Cube />
         <div className="text-lg space-y-3"> {/* Add spacing for the paragraphs */}
           <p className="text-gray-500">
-            Currently studying business, data science, and computer science.
+            Currently studying business and data science.
           </p>
           <p className="text-gray-500">
-            More than a decade of experience with building digital products.
+            More than a decade of experience building digital products.
           </p>
         </div>
       </div>
