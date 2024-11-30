@@ -1,22 +1,29 @@
 import Link from 'next/link';
+import Cube from '../components/Cube';
 
 export default function Home() {
   const sections = [
     { label: 'CV', href: '/cv' },
     { label: 'Projects', href: '/projects' },
-    { label: 'Academia', href: '/academia' }
+    { label: 'Academia', href: '/academia' },
   ];
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center text-center px-4">
-      <div className="flex flex-col items-center space-y-6">
-        <text className="text-lg">
-        <p className="text-gray-500">Currently studying business, data science, and computer science.</p>
-        <p className="text-gray-500">More than a decade of experience with building digital products.</p>
-        </text>
+    <div className="flex flex-col items-center text-center overflow-hidden space-y-12"> {/* Add spacing here */}
+      <div className="flex flex-col items-center justify-center space-y-6">
+        <Cube />
+        <div className="text-lg space-y-3"> {/* Add spacing for the paragraphs */}
+          <p className="text-gray-500">
+            Currently studying business, data science, and computer science.
+          </p>
+          <p className="text-gray-500">
+            More than a decade of experience with building digital products.
+          </p>
+        </div>
       </div>
-      
-      <nav className="mt-12">
+
+      {/* Navigation Section */}
+      <nav className="mb-8">
         <ul className="flex space-x-4">
           {sections.map((section, idx) => (
             <li key={idx}>
