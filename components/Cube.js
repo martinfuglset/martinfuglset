@@ -65,7 +65,7 @@ const Cube = () => {
   return (
     <div
       ref={mountRef}
-      className="w-96 h-96 flex items-center justify-center aspect-square"
+      className="w-64 h-64 md:w-96 md:h-96 flex items-center justify-center aspect-square"
     ></div>
   );
 };
