@@ -15,13 +15,7 @@ export default function Home() {
         <Cube />
         <div className="text-lg space-y-3">
           <p className="text-gray-500">
-            Currently studying business{' '}
-            <span className="md:hidden">
-              <br />
-            </span>
-            <span className="hidden md:inline">and </span>
-            <span className="inline md:hidden"> </span>
-            data science.
+            Currently studying Business and Data Science.
           </p>
           <p className="text-gray-500">
             More than a decade of experience building digital products.
