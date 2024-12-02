@@ -29,7 +29,7 @@ export default function Home() {
           {sections.map((section, idx) => (
             <li key={idx}>
               <Link href={section.href} legacyBehavior>
-                <a className="block py-3 px-6 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg transition-colors duration-300 text-lg text-gray-800 dark:text-gray-300 hover:bg-gray-900 hover:text-white">
+                <a className="block py-3 px-6 bg-white border border-gray-300 rounded-lg transition-colors duration-300 text-lg text-gray-800 hover:bg-gray-900 hover:text-white">
                   {section.label}
                 </a>
               </Link>

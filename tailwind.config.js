@@ -23,7 +23,7 @@ module.exports = {
       },
     },
   },
-  darkMode: 'media', // Sync with the system's dark mode preference
+  darkMode: false, // Sync with the system's dark mode preference
   plugins: [],
 };
 

@@ -9,10 +9,6 @@
   --foreground-light: #171717;
 }
 
-.dark {
-  --background-light: #222222; /* Dark mode background */
-  --foreground-light: #ededed; /* Dark mode text color */
-}
 
 @font-face {
   font-family: 'SuisseIntl';

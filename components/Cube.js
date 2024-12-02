@@ -9,23 +9,22 @@ const Cube = () => {
     const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
     camera.position.z = 5;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true }); // Transparent background
+    // Enable antialiasing for smoother edges
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
     renderer.setSize(800, 800);
+
+    // Improve rendering sharpness on high-resolution displays
+    renderer.setPixelRatio(window.devicePixelRatio);
+
     if (mountRef.current) {
       mountRef.current.appendChild(renderer.domElement);
     }
 
     const geometry = new THREE.BoxGeometry();
 
-    // Function to get the appropriate edge color
-    const getEdgeColor = () => {
-      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      return isDarkMode ? 0xffffff : 0x000000; // White in dark mode, black in light mode
-    };
-
-    // Create the wireframe (only edges, no fill)
+    // Set a static edge color (e.g., black)
+    const edgeMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
     const edges = new THREE.EdgesGeometry(geometry);
-    const edgeMaterial = new THREE.LineBasicMaterial({ color: getEdgeColor() });
     const wireframe = new THREE.LineSegments(edges, edgeMaterial);
     scene.add(wireframe);
 
@@ -45,20 +44,10 @@ const Cube = () => {
 
     animate();
 
-    // Handle dark mode changes dynamically
-    const handleThemeChange = (e) => {
-      const isDarkMode = e.matches;
-      edgeMaterial.color.set(isDarkMode ? 0xffffff : 0x000000); // Update edge color
-    };
-
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    mediaQuery.addEventListener('change', handleThemeChange);
-
     return () => {
       if (mountRef.current) {
         mountRef.current.removeChild(renderer.domElement);
       }
-      mediaQuery.removeEventListener('change', handleThemeChange);
     };
   }, []);
 

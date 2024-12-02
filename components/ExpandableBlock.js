@@ -15,13 +15,13 @@ export default function ExpandableBlock({
 
   return (
     <div
-      className={`bg-gray-50 dark:bg-gray-900 p-4 rounded cursor-pointer transition-colors ease-in-out duration-400 border border-transparent hover:bg-white dark:hover:bg-gray-800 hover:border-gray-300 dark:hover:border-gray-600`}
+      className={`bg-gray-50 p-4 rounded cursor-pointer transition-colors ease-in-out duration-400 border border-transparent hover:bg-white hover:border-gray-300`}
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex justify-between items-center">
         <div>
-          <p className="text-base text-gray-900 dark:text-gray-100">{title}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-400">{subtitle}</p>
+          <p className="text-base text-gray-900">{title}</p>
+          <p className="text-sm text-gray-600">{subtitle}</p>
         </div>
         <div className="text-sm text-gray-500">{isOpen ? '−' : '+'}</div>
       </div>
@@ -31,15 +31,15 @@ export default function ExpandableBlock({
         }`}
       >
         <div className="mt-2">
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+          <p className="text-sm text-gray-500">
             {startDate} – {endDate} {duration && ` · ${duration}`}
           </p>
-          {location && <p className="text-sm text-gray-500 dark:text-gray-400">{location}</p>}
+          {location && <p className="text-sm text-gray-500">{location}</p>}
           {credentialID && (
-            <p className="text-sm text-gray-500 dark:text-gray-400">Credential ID: {credentialID}</p>
+            <p className="text-sm text-gray-500">Credential ID: {credentialID}</p>
           )}
           {credentialLink && (
-            <a href={credentialLink} className="text-sm text-gray-700 hover:underline dark:text-gray-200">
+            <a href={credentialLink} className="text-sm text-gray-700 hover:underline">
               Show credential
             </a>
           )}

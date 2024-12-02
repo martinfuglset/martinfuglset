@@ -5,7 +5,7 @@ export default function Footer() {
       <div className="flex flex-row md:flex-col md:space-y-2 space-x-4 md:space-x-0">
         <a
           href="https://github.com/martinfuglset"
-          className="link-item text-gray-800 dark:text-gray-300 dark:hover:text-white group"
+          className="link-item text-gray-800 hover:text-black group"
         >
           GitHub
           <span className="hidden md:inline-block ml-2 transition-transform duration-300 transform group-hover:-rotate-45">
@@ -14,7 +14,7 @@ export default function Footer() {
         </a>
         <a
           href="https://www.linkedin.com/in/martinfuglset/"
-          className="link-item text-gray-800 dark:text-gray-300 dark:hover:text-white group"
+          className="link-item text-gray-800 hover:text-black group"
         >
           LinkedIn
           <span className="hidden md:inline-block ml-2 transition-transform duration-300 transform group-hover:-rotate-45">
@@ -23,7 +23,7 @@ export default function Footer() {
         </a>
         <a
           href="mailto:fuglsetm@gmail.com"
-          className="link-item text-gray-800 dark:text-gray-300 dark:hover:text-white group"
+          className="link-item text-gray-800 hover:text-black group"
         >
           Email
           <span className="hidden md:inline-block ml-2 transition-transform duration-300 transform group-hover:-rotate-45">
@@ -33,8 +33,12 @@ export default function Footer() {
       </div>
 
       {/* Attribution Section */}
-      <div className="text-gray-500 dark:text-gray-400 text-sm">
-        <p>&copy; {new Date().getFullYear()}, Martin Fuglset. <br className="hidden md:inline-block"></br> All rights reserved.</p>
+      <div className="text-gray-500 text-sm">
+        <p>
+          &copy; {new Date().getFullYear()}, Martin Fuglset.
+          <br className="hidden md:inline-block" />
+          All rights reserved.
+        </p>
       </div>
     </footer>
   );
