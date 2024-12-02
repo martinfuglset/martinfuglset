@@ -14,11 +14,18 @@
   --foreground-light: #ededed; /* Dark mode text color */
 }
 
+@font-face {
+  font-family: 'SuisseIntl';
+  src: url('/fonts/SuisseIntl-Regular.otf') format('otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Apply variables to the body */
 body {
   background-color: var(--background-light);
   color: var(--foreground-light);
-  font-family: 'SuisseIntl', sans-serif;
+  font-family: 'SuisseIntl-Regular', sans-serif;
   margin: 0; /* Ensure no margins interfere */
   padding: 0; /* Ensure no paddings interfere */
   width: 100%; /* Ensure full width */

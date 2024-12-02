@@ -14,10 +14,10 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center space-y-6 w-full max-w-full">
         <Cube />
         <div className="text-lg space-y-3">
-          <p className="text-gray-500">
+          <p className="text-gray-800">
             Currently studying Business and Data Science.
           </p>
-          <p className="text-gray-500">
+          <p className="text-gray-800">
             More than a decade of experience building digital products.
           </p>
         </div>
