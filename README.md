@@ -1,2 +1,2 @@
-Currently studying Business and Data Science.  
-More than a decade of experience building digital products.
+Studying Business and Data Science.  
+More than a decade of experience creating digital products.
