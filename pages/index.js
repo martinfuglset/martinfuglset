@@ -34,7 +34,7 @@ export default function Home({ markdownContent }) {
             ?.split('\n')
             .filter((line) => line.trim() !== '') // Ignore empty lines
             .map((line, idx) => (
-              <p key={idx} className="text-gray-800">
+              <p key={idx} className='text-black'>
                 {line}
               </p>
             ))}
@@ -43,11 +43,11 @@ export default function Home({ markdownContent }) {
 
       {/* Navigation Section */}
       <nav>
-        <ul className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 w-full">
+        <ul className="flex flex-col md:flex-row md:space-x-2 space-y-4 md:space-y-0 w-full">
           {sections.map((section, idx) => (
             <li key={idx}>
               <Link href={section.href} legacyBehavior>
-                <a className="block py-3 px-6 bg-white border border-gray-300 rounded-lg transition-colors duration-300 text-lg text-gray-800 hover:bg-gray-900 hover:text-white">
+                <a className="block py-3 px-6 bg-white border border-gray-300 hover:border-white rounded-full transition-colors duration-300 text-lg hover:bg-black hover:text-white">
                   {section.label}
                 </a>
               </Link>

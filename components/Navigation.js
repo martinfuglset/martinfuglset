@@ -14,7 +14,7 @@ export default function Navigation() {
           <li key={idx}>
             <Link
               href={section.href}
-              className="movable-link text-lg text-gray-800 dark:text-gray-300 hover:text-black dark:hover:text-white"
+              className="movable-link text-lg"
             >
               {section.label}
             </Link>

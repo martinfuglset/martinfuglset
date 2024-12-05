@@ -1,39 +1,29 @@
 export default function Footer() {
+  const links = [
+    { href: "https://github.com/martinfuglset", label: "GitHub" },
+    { href: "https://www.linkedin.com/in/martinfuglset/", label: "LinkedIn" },
+    { href: "mailto:fuglsetm@gmail.com", label: "Email" },
+  ];
+
   return (
     <footer className="mt-8 text-lg flex flex-col items-center md:items-start text-center md:text-left space-y-4">
-      {/* Links Section */}
+    
       <div className="flex flex-row md:flex-col md:space-y-2 space-x-4 md:space-x-0">
-        <a
-          href="https://github.com/martinfuglset"
-          className="link-item text-gray-800 hover:text-black group"
-        >
-          GitHub
-          <span className="hidden md:inline-block ml-2 transition-transform duration-300 transform group-hover:-rotate-45">
-            →
-          </span>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/martinfuglset/"
-          className="link-item text-gray-800 hover:text-black group"
-        >
-          LinkedIn
-          <span className="hidden md:inline-block ml-2 transition-transform duration-300 transform group-hover:-rotate-45">
-            →
-          </span>
-        </a>
-        <a
-          href="mailto:fuglsetm@gmail.com"
-          className="link-item text-gray-800 hover:text-black group"
-        >
-          Email
-          <span className="hidden md:inline-block ml-2 transition-transform duration-300 transform group-hover:-rotate-45">
-            →
-          </span>
-        </a>
+        {links.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            className="link-item group"
+          >
+            {link.label}
+            <span className="hidden md:inline-block ml-2 transition-transform duration-300 transform group-hover:-rotate-45">
+              →
+            </span>
+          </a>
+        ))}
       </div>
 
-      {/* Attribution Section */}
-      <div className="text-gray-500 text-sm">
+      <div className="text-sm">
         <p>
           &copy; {new Date().getFullYear()}, Martin Fuglset.
           <br className="hidden md:inline-block" />

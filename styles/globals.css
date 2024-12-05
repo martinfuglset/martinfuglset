@@ -1,45 +1,38 @@
-/* Ensure Tailwind resets work */
+/* Tailwind base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom variables */
-:root {
-  --background-light: #ffffff;
-  --foreground-light: #171717;
-}
-
 
 @font-face {
   font-family: 'SuisseIntl';
-  src: url('/fonts/SuisseIntl-Regular.otf') format('otf');
+  src: url('/fonts/SuisseIntl-Regular.otf') format('opentype'); /* Clarify format */
   font-weight: 400;
   font-style: normal;
 }
 
-/* Apply variables to the body */
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
 body {
   background-color: var(--background-light);
   color: var(--foreground-light);
-  font-family: 'SuisseIntl-Regular', sans-serif;
-  margin: 0; /* Ensure no margins interfere */
-  padding: 0; /* Ensure no paddings interfere */
-  width: 100%; /* Ensure full width */
-  min-height: 100%; /* Ensure body stretches to full height */
-  transition: background-color 0.3s, color 0.3s;
-}
-
-html {
-  scroll-behavior: smooth; /* Optional: Smooth scrolling */
+  font-family: 'SuisseIntl', sans-serif; /* Removed typo and ensured fallback */
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Standardized timing function */
 }
 
 #root, #__next {
-  height: 100%; /* Ensures Next.js containers stretch to full height */
+  height: 100%; /* Ensures full-height container for frameworks like React/Next.js */
 }
 
-/* Other custom styles */
+/* Reusable utility styles */
 .movable-link {
-  @apply inline-block transition-all ease-in-out duration-300;
+  @apply inline-block transition-all duration-300 ease-in-out; /* Shortened shorthand */
 }
 
 .movable-link:hover {
@@ -47,16 +40,14 @@ html {
 }
 
 .link-item {
-  display: inline-flex;
-  align-items: center;
-  transition: color 0.3s ease;
+  @apply inline-flex items-center transition-colors duration-300 ease-in-out; /* Tailwind utilities for consistency */
 }
 
 .link-item .arrow {
   display: inline-block;
   margin-left: 5px;
   transition: transform 0.3s ease;
-  transform-origin: center center;
+  transform-origin: center;
 }
 
 .link-item:hover .arrow {
