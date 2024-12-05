@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'SuisseIntl';
-  src: url('/fonts/SuisseIntl-Regular.otf') format('opentype'); /* Clarify format */
+  src: url('/fonts/SuisseIntl-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
