@@ -1,7 +1,22 @@
 import Link from 'next/link';
 import Cube from '../components/Cube';
+import { getMarkdownContent } from '../utils/getMarkdownContent';
 
-export default function Home() {
+export async function getStaticProps() {
+  let content = '';
+  try {
+    content = getMarkdownContent('README.md'); // File is in the root directory
+  } catch (error) {
+    console.error('Error loading markdown content:', error);
+  }
+  return {
+    props: {
+      markdownContent: content || 'No content found.',
+    },
+  };
+}
+
+export default function Home({ markdownContent }) {
   const sections = [
     { label: 'CV', href: '/cv' },
     { label: 'Projects', href: '/projects' },
@@ -14,12 +29,15 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center space-y-6 w-full max-w-full">
         <Cube />
         <div className="text-lg space-y-3">
-          <p className="text-gray-800">
-            Currently studying Business and Data Science.
-          </p>
-          <p className="text-gray-800">
-            More than a decade of experience building digital products.
-          </p>
+          {/* Graceful handling of undefined or empty markdownContent */}
+          {markdownContent
+            ?.split('\n')
+            .filter((line) => line.trim() !== '') // Ignore empty lines
+            .map((line, idx) => (
+              <p key={idx} className="text-gray-800">
+                {line}
+              </p>
+            ))}
         </div>
       </div>
 
