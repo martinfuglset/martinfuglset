@@ -1,14 +1,13 @@
 import axios from 'axios';
 
-const GITHUB_USERNAME = process.env.NEXT_PUBLIC_GITHUB_USERNAME; // Set in your .env.local
-const GITHUB_TOKEN = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+const GITHUB_USERNAME = process.env.GITHUB_USERNAME; // No "NEXT_PUBLIC_"
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 export async function fetchGitHubProjects() {
     const headers = {
         Authorization: `token ${GITHUB_TOKEN}`,
     };
 
-    // Fetch repositories
     const reposResponse = await axios.get(
         `https://api.github.com/users/${GITHUB_USERNAME}/repos`,
         { headers }
@@ -16,7 +15,6 @@ export async function fetchGitHubProjects() {
 
     const repos = reposResponse.data;
 
-    // Fetch README for each repo
     const projects = await Promise.all(
         repos.map(async (repo) => {
             try {
@@ -37,10 +35,10 @@ export async function fetchGitHubProjects() {
                 };
             } catch (error) {
                 console.error(`Failed to fetch README for ${repo.name}:`, error);
-                return null; // Skip repositories with errors
+                return null;
             }
         })
     );
 
-    return projects.filter((project) => project !== null); // Filter out failed repos
+    return projects.filter((project) => project !== null);
 }
