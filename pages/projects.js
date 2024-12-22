@@ -9,36 +9,23 @@ export default function Projects({ githubProjects }) {
                 <p>No projects available.</p>
             ) : (
                 <ExpandableSection title="">
-                    {githubProjects.map((project) => {
-                        const readmeSubtitle = project.readme
-                            ? project.readme.split('\n')[0] // Use the first line of the README
-                            : 'No description available.';
-                        return (
-                            <ExpandableBlock
-                                key={project.name}
-                                title={project.name}
-                                subtitle={readmeSubtitle}
-                                startDate="Dynamic"
-                                endDate="Present"
-                                location={
-                                    <a
-                                        href={project.url}
-                                        className="text-blue-500 hover:underline flex items-center"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        GitHub
-                                    </a>
-                                }
-                            >
-                                {project.readme && (
-                                    <pre className="bg-gray-100 p-2 rounded text-xs mt-2 overflow-auto">
-                                        {project.readme}
-                                    </pre>
-                                )}
-                            </ExpandableBlock>
-                        );
-                    })}
+                    {githubProjects.map((project) => (
+                        <ExpandableBlock
+                            key={project.name}
+                            title={project.name}
+                            subtitle={project.description}
+                            location={
+                                <a
+                                    href={project.url}
+                                    className="hover:underline flex items-center"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    GitHub
+                                </a>
+                            }
+                        />
+                    ))}
                 </ExpandableSection>
             )}
         </section>
