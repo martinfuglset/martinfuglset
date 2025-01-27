@@ -1,15 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+
 /* Tailwind base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
-@font-face {
-  font-family: 'SuisseIntl';
-  src: url('/fonts/SuisseIntl-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
 
 html {
   scroll-behavior: smooth; /* Enables smooth scrolling */
@@ -18,7 +12,6 @@ html {
 body {
   background-color: var(--background-light);
   color: var(--foreground-light);
-  font-family: 'SuisseIntl', sans-serif; /* Removed typo and ensured fallback */
   margin: 0;
   padding: 0;
   width: 100%;

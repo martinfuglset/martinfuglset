@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, FaEnvelope, FaFigma } from 'react-icons/fa';
 import { getMarkdownContent } from '../utils/getMarkdownContent';
+import ArrowIcon from '../components/ArrowIcon';
+import ReactMarkdown from 'react-markdown';
 
 export default function Home({ markdownContent }) {
   const socialLinks = [
@@ -14,8 +16,14 @@ export default function Home({ markdownContent }) {
     <div className="flex flex-col items-center space-y-2 p-4 md:p-8">
       {/* Introduction Box */}
       <div className="w-full max-w-2xl p-8">
-        <h1 className="text-3xl font-normal mb-4">My name is Martin</h1>
-        <p className="text-lg text-gray-700">{markdownContent}</p>
+        <ReactMarkdown
+          components={{
+            h3: ({node, ...props}) => <h3 className="text-2xl mb-4 text-gray-800 font-medium" {...props} />,
+            p: ({node, ...props}) => <p className="text-lg text-gray-700 mb-4" {...props} />
+          }}
+        >
+          {markdownContent}
+        </ReactMarkdown>
       </div>
 
       {/* Social Links - Each in its own box */}
@@ -35,7 +43,7 @@ export default function Home({ markdownContent }) {
                'Check out my GitHub'}
             </span>
           </div>
-          <span className="transform -rotate-45 text-xl">→</span>
+          <span className="transform -rotate-45 text-xl"><ArrowIcon /></span>
         </a>
       ))}
     </div>
