@@ -1,11 +1,51 @@
 import Link from 'next/link';
-import Cube from '../components/Cube';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFigma } from 'react-icons/fa';
 import { getMarkdownContent } from '../utils/getMarkdownContent';
+
+export default function Home({ markdownContent }) {
+  const socialLinks = [
+    { label: 'GitHub', href: 'https://github.com/martinfuglset', icon: <FaGithub className="text-2xl" /> },
+    { label: 'Figma', href: 'https://www.figma.com/@martinfuglset', icon: <FaFigma className="text-2xl" /> },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/martinfuglset', icon: <FaLinkedin className="text-2xl" /> },
+    { label: 'Email', href: 'mailto:martin@fuglset.com', icon: <FaEnvelope className="text-2xl" /> }
+  ];
+
+  return (
+    <div className="flex flex-col items-center space-y-2 p-4 md:p-8">
+      {/* Introduction Box */}
+      <div className="w-full max-w-2xl p-8">
+        <h1 className="text-3xl font-normal mb-4">My name is Martin</h1>
+        <p className="text-lg text-gray-700">{markdownContent}</p>
+      </div>
+
+      {/* Social Links - Each in its own box */}
+      {socialLinks.map((link, idx) => (
+        <a
+          key={idx}
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full max-w-2xl p-6 bg-gray-50 rounded-lg border border-transparent hover:border-black transition-all duration-300 flex items-center justify-between">
+          <div className="flex items-center space-x-4">
+            {link.icon}
+            <span className="text-lg">
+              {link.label === 'Figma' ? 'Check out my Figma' :
+              link.label === 'LinkedIn' ? 'Connect with me on LinkedIn' :
+               link.label === 'Email' ? 'Shoot me an email' :
+               'Check out my GitHub'}
+            </span>
+          </div>
+          <span className="transform -rotate-45 text-xl">→</span>
+        </a>
+      ))}
+    </div>
+  );
+}
 
 export async function getStaticProps() {
   let content = '';
   try {
-    content = getMarkdownContent('README.md'); // File is in the root directory
+    content = getMarkdownContent('README.md');
   } catch (error) {
     console.error('Error loading markdown content:', error);
   }
@@ -14,47 +54,4 @@ export async function getStaticProps() {
       markdownContent: content || 'No content found.',
     },
   };
-}
-
-export default function Home({ markdownContent }) {
-  const sections = [
-    { label: 'CV', href: '/cv' },
-    { label: 'Projects', href: '/projects' },
-    { label: 'Academia', href: '/academia' },
-  ];
-
-  return (
-    <div className="flex flex-col items-center text-center space-y-12 p-4 md:p-8">
-      {/* Cube and Intro Text */}
-      <div className="flex flex-col items-center justify-center space-y-6 w-full max-w-full">
-        <Cube />
-        <div className="text-lg space-y-3">
-          {/* Graceful handling of undefined or empty markdownContent */}
-          {markdownContent
-            ?.split('\n')
-            .filter((line) => line.trim() !== '') // Ignore empty lines
-            .map((line, idx) => (
-              <p key={idx} className='text-black'>
-                {line}
-              </p>
-            ))}
-        </div>
-      </div>
-
-      {/* Navigation Section */}
-      <nav>
-        <ul className="flex flex-col md:flex-row md:space-x-2 space-y-4 md:space-y-0 w-full">
-          {sections.map((section, idx) => (
-            <li key={idx}>
-              <Link href={section.href} legacyBehavior>
-                <a className="block py-3 px-6 bg-white border border-gray-300 hover:border-white rounded-full transition-colors duration-300 text-lg hover:bg-black hover:text-white">
-                  {section.label}
-                </a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
-  );
 }

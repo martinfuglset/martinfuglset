@@ -1,2 +1,1 @@
-Passionate about Data, Software, Business and Design.  
-More than a decade of experience creating digital products.
+I'm passionate about solving real business problems using data and software.

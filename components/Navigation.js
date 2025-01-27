@@ -8,13 +8,13 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="mt-10 mb-auto">
-      <ul className="space-y-4">
+    <nav className="w-full">
+      <ul className="flex flex-row justify-center space-x-4 md:space-x-6">
         {sections.map((section, idx) => (
           <li key={idx}>
             <Link
               href={section.href}
-              className="movable-link text-lg"
+              className="text-lg py-2 px-4 hover:bg-gray-100 rounded-full transition-colors duration-300"
             >
               {section.label}
             </Link>
