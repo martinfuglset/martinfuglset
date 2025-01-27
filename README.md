@@ -1,2 +1,2 @@
 ### I'm Martin – Data Scientist and Solution Architect
-I specialize in transforming complex challenges into elegant solutions through data-driven architecture and rigorous design principles. With expertise in both data science and solution architecture, I build scalable systems that turn data into actionable insights.
+I help solve tough problems by designing practical, data-driven solutions. With experience in data science and solution architecture, I create systems that make data clear, useful, and actionable.
