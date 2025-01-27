@@ -1,2 +1,2 @@
 ### I'm Martin – Solution Architect
-Passionate about solving real-world problems by designing practical, data-driven solutions. With more than a decade of experience in creating digital products, I design solutions with a systematic approach and rigorous design principles.
+Driven to enhance data pipelines through the design of practical and efficient solutions. With over a decade of experience in crafting digital products, I apply a systematic approach and adhere to rigorous design principles to develop impactful solutions.
