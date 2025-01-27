@@ -9,7 +9,7 @@ export default function Home({ markdownContent }) {
     { label: 'GitHub', href: 'https://github.com/martinfuglset', icon: <FaGithub className="text-2xl" /> },
     { label: 'Figma', href: 'https://www.figma.com/@martinfuglset', icon: <FaFigma className="text-2xl" /> },
     { label: 'LinkedIn', href: 'https://linkedin.com/in/martinfuglset', icon: <FaLinkedin className="text-2xl" /> },
-    { label: 'Email', href: 'mailto:martin@fuglset.com', icon: <FaEnvelope className="text-2xl" /> }
+    { label: 'Email', href: 'mailto:fuglsetm@gmail.com', icon: <FaEnvelope className="text-2xl" /> }
   ];
 
   return (
