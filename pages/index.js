@@ -18,7 +18,7 @@ export default function Home({ markdownContent }) {
       <div className="w-full max-w-2xl p-8">
         <ReactMarkdown
           components={{
-            h3: ({node, ...props}) => <h3 className="text-2xl mb-4 text-gray-800 font-medium" {...props} />,
+            h3: ({node, ...props}) => <h3 className="text-2xl mt-8 mb-4 text-gray-800 font-medium" {...props} />,
             p: ({node, ...props}) => <p className="text-lg text-gray-700 mb-4" {...props} />
           }}
         >
@@ -38,7 +38,7 @@ export default function Home({ markdownContent }) {
             {link.icon}
             <span className="text-lg">
               {link.label === 'Figma' ? 'Check out my Figma' :
-              link.label === 'LinkedIn' ? 'Connect with me on LinkedIn' :
+              link.label === 'LinkedIn' ? 'Connect on LinkedIn' :
                link.label === 'Email' ? 'Shoot me an email' :
                'Check out my GitHub'}
             </span>
