@@ -16,6 +16,7 @@ body {
   padding: 0;
   width: 100%;
   min-height: 100%;
+  font-size: 0.875rem; /* Added 14px (0.875rem) base font size */
   transition: background-color 0.3s ease, color 0.3s ease; /* Standardized timing function */
 }
 
