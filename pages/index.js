@@ -1,15 +1,15 @@
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaEnvelope, FaFigma } from 'react-icons/fa';
+import { SiFigma } from 'react-icons/si';
+import { FiGithub, FiLinkedin, FiMail, FiArrowUpRight } from 'react-icons/fi';
 import { getMarkdownContent } from '../utils/getMarkdownContent';
-import ArrowIcon from '../components/ArrowIcon';
 import ReactMarkdown from 'react-markdown';
 
 export default function Home({ markdownContent }) {
   const socialLinks = [
-    { label: 'GitHub', href: 'https://github.com/martinfuglset', icon: <FaGithub className="text-2xl" /> },
-    { label: 'Figma', href: 'https://www.figma.com/@martinfuglset', icon: <FaFigma className="text-2xl" /> },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/martinfuglset', icon: <FaLinkedin className="text-2xl" /> },
-    { label: 'Email', href: 'mailto:fuglsetm@gmail.com', icon: <FaEnvelope className="text-2xl" /> }
+    { label: 'GitHub', href: 'https://github.com/martinfuglset', icon: <FiGithub size={24} /> },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/martinfuglset', icon: <FiLinkedin size={24} /> },
+    { label: 'Email', href: 'mailto:fuglsetm@gmail.com', icon: <FiMail size={24} /> },
+    { label: 'Figma', href: 'https://figma.com/@martinfuglset', icon: <SiFigma size={24} /> }
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Home({ markdownContent }) {
                'Check out my GitHub'}
             </span>
           </div>
-          <span className="transform -rotate-45 text-xl"><ArrowIcon /></span>
+          <FiArrowUpRight size={24} />
         </a>
       ))}
     </div>
