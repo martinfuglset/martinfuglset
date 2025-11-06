@@ -1,0 +1,158 @@
+.sidebar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.title {
+  text-transform: uppercase;
+  flex: 1;
+}
+
+.headerDivider {
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+  margin-bottom: 16px;
+}
+
+.time {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.6;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.closeButton:hover {
+  opacity: 0.6;
+}
+
+.contentWrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.email,
+.social {
+  opacity: 0.8;
+}
+
+.social {
+  display: inline-block;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.textBlock {
+  display: block;
+}
+
+.textContent {
+  width: 100%;
+}
+
+.textContent p {
+  line-height: 1.5;
+  color: #000;
+}
+
+.links {
+  margin-top: 8px;
+}
+
+.cvLink {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.cvLink:hover {
+  opacity: 0.6;
+}
+
+.cvPanelContainer {
+  width: 100%;
+  background: white;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.copyright {
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    margin-bottom: 12px;
+  }
+
+  .content {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 12px;
+  }
+
+  .content {
+    gap: 12px;
+  }
+
+  .footer {
+    padding-top: 12px;
+  }
+}
+

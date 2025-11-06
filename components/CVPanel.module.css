@@ -1,0 +1,148 @@
+.cvPanel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transform: translateX(100%);
+  animation: cvSlideIn 300ms ease-out forwards;
+  will-change: transform;
+}
+
+.closing {
+  animation: cvSlideOut 300ms ease-in forwards;
+}
+
+@keyframes cvSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes cvSlideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.closeButton:hover {
+  opacity: 0.6;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cvTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cvTitleText {
+  text-transform: uppercase;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #e5e5e5;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.sectionHeader {
+  flex: 0 0 auto;
+  min-width: 120px;
+}
+
+.sectionTitle {
+  text-transform: uppercase;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.sectionContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.entryContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.entryContent > div {
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 12px;
+  }
+
+  .content {
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cvPanel {
+    animation: none;
+    transform: none;
+  }
+  .closing {
+    animation: none;
+  }
+}
+
