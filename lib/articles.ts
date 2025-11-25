@@ -184,7 +184,7 @@ The findings suggest that responsive design is not merely a technical requiremen
 
 export async function getArticles(): Promise<Article[]> {
   // Simulate async data fetching
-  return Promise.resolve(articlesData)
+  return Promise.resolve([])
 }
 
 export async function getArticleBySlug(slug: string): Promise<Article | null> {

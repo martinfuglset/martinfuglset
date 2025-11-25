@@ -41,7 +41,7 @@ export default function Sidebar() {
 
   return (
     <aside className={styles.sidebar}>
-      <header className={styles.header}>
+      <div className={styles.titleRow}>
         <h1 className={styles.title}>{showCV || isClosing ? 'MARTIN FUGLSET (CV)' : 'MARTIN FUGLSET'}</h1>
         {showCV || isClosing ? (
           <button onClick={handleCloseCV} className={styles.closeButton}>
@@ -50,8 +50,7 @@ export default function Sidebar() {
         ) : (
           <div className={styles.time}>{currentTime}</div>
         )}
-      </header>
-      <div className={styles.headerDivider}></div>
+      </div>
 
       <div className={styles.contentWrapper}>
         {showCV || isClosing ? (

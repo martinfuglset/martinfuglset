@@ -1,13 +1,6 @@
 import type { Metadata } from 'next'
-import { Roboto_Mono } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
 import './globals.css'
-
-const robotoMono = Roboto_Mono({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-  variable: '--font-mono',
-})
 
 export const metadata: Metadata = {
   title: 'Personal Blog',
@@ -20,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={robotoMono.variable}>
+    <html lang="en" className={GeistSans.variable}>
       <body>{children}</body>
     </html>
   )
