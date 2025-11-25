@@ -3,7 +3,7 @@ import { GeistSans } from 'geist/font/sans'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Personal Blog',
+  title: 'Martin Fuglset',
   description: 'Research articles and essays',
 }
 
