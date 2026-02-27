@@ -15,8 +15,9 @@ body {
   min-height: 100%;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.4;
-  color: #000;
-  background: #fff;
+  letter-spacing: normal;
+  color: #343434;
+  background: #fcfcfc;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,11 +25,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-a:hover {
-  opacity: 0.6;
+  transition: color 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
 }
 
 img {
@@ -40,14 +37,63 @@ img {
 .landing {
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   padding: 24px;
 }
 
-.card-grid {
+.content {
   width: 100%;
   max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 48px);
+  align-items: center;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.name-title {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.main-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: auto 0;
+}
+
+.study-text {
+  align-self: center;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.study-text a:hover {
+  opacity: 0.7;
+}
+
+.work-text {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 4px;
+  opacity: 0.5;
+}
+
+.card-grid {
+  width: 100%;
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -58,9 +104,14 @@ img {
   flex-direction: column;
   gap: 10px;
   padding: 28px 24px;
-  border: 1px solid #e5e5e5;
-  border-radius: 24px;
-  background: transparent;
+  border: none;
+  border-radius: 12px;
+  background: #f3f3f3;
+  transition: background-color 0.2s ease;
+}
+
+.link-card:hover {
+  background: #eeeeee;
 }
 
 .card-heading {
@@ -73,4 +124,145 @@ img {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+}
+
+.link-card p,
+.study-text {
+  color: #5a4b3c;
+}
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.social-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.social-button:hover {
+  background: #eeeeee;
+  color: #1f1f1f;
+}
+
+.social-button svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  stroke-width: 1.8;
+}
+
+.social-popover {
+  position: relative;
+}
+
+.social-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px) scale(0.96);
+  transform-origin: bottom center;
+  background: #fcfcfc;
+  color: #343434;
+  padding: 6px 8px;
+  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.2s ease;
+}
+
+.social-tooltip svg {
+  width: 12px;
+  height: 12px;
+}
+
+.social-popover:hover .social-tooltip,
+.social-popover:focus-within .social-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0) scale(1);
+  animation: popover-bounce-centered 0.35s ease;
+}
+
+.mail-menu {
+  transform: translateY(4px) scale(0.96);
+  transform-origin: bottom center;
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  background: #fcfcfc;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.mail-menu[data-open] {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  animation: popover-bounce 0.35s ease;
+}
+
+.mail-action {
+  border: none;
+  background: transparent;
+  color: #343434;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mail-action svg {
+  width: 14px;
+  height: 14px;
+}
+
+.mail-action:hover {
+  background: #eeeeee;
+}
+
+@keyframes popover-bounce {
+  0% {
+    transform: translateY(6px) scale(0.92);
+  }
+  60% {
+    transform: translateY(-2px) scale(1.02);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes popover-bounce-centered {
+  0% {
+    transform: translateX(-50%) translateY(6px) scale(0.92);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-2px) scale(1.02);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
 }
