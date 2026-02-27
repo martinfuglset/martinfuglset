@@ -1,17 +1,45 @@
-import Link from 'next/link'
-import { getArticles } from '@/lib/articles'
-import MainLayout from '@/components/MainLayout'
-import ArticleList from '@/components/ArticleList'
-import Sidebar from '@/components/Sidebar'
-
-export default async function Home() {
-  const articles = await getArticles()
-
+export default function Home() {
   return (
-    <MainLayout>
-      <ArticleList articles={articles} />
-      <Sidebar />
-    </MainLayout>
+    <main className="landing">
+      <div className="card-grid">
+        <a
+          className="link-card"
+          href="https://asterisk.digital"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className="card-heading">
+            <img
+              className="card-icon"
+              src="/favicons/asterisk.svg"
+              alt="Asterisk favicon"
+              width="20"
+              height="20"
+            />
+            <h1>asterisk.digital</h1>
+          </div>
+          <p>Data &amp; AI</p>
+        </a>
+
+        <a
+          className="link-card"
+          href="https://fabillio.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <div className="card-heading">
+            <img
+              className="card-icon"
+              src="/favicons/fabillio.svg"
+              alt="Fabillio favicon"
+              width="20"
+              height="20"
+            />
+            <h1>fabillio.com</h1>
+          </div>
+          <p>Complex Financial Systems</p>
+        </a>
+      </div>
+    </main>
   )
 }
-
