@@ -1,1 +1,1 @@
-[martinfuglset.com]
+[martinfuglset.com](martinfuglset.com)
