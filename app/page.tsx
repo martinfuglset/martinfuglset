@@ -52,25 +52,6 @@ export default function Home() {
               </div>
               <p>Data &amp; AI</p>
             </a>
-
-            <a
-              className="link-card"
-              href="https://fabillio.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="card-heading">
-                <img
-                  className="card-icon"
-                  src="/favicons/fabillio.svg"
-                  alt="Fabillio favicon"
-                  width="20"
-                  height="20"
-                />
-                <h1>fabillio.com</h1>
-              </div>
-              <p>Systems for Complex FinOps</p>
-            </a>
           </div>
         </section>
 
